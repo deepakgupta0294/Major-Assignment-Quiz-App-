@@ -373,25 +373,31 @@ const proflos = [
 
 ];
 
+// Profit and Loss Quiz Start----------------
+
 function prolosquiz() {
 
-    function starttimer(time){
+    // Function of Timer for Quiz
+
+    function starttimer(time) {
 
         counter = setInterval(timer, 1000)
-        function timer(){
+        function timer() {
             const timerElement = document.getElementById('timer');
             timerElement.innerHTML = 'Time Left : ' + time + ' seconds';
             time--;
-            if(time<0){
+            if (time < 0) {
                 clearInterval(counter);
                 index++;
                 loadQuestion()
                 starttimer(timevalue);
 
-                                 
+
             }
         }
     }
+
+    // Function to Count Score
 
     function userscore() {
         var score = document.getElementById('score');
@@ -400,16 +406,21 @@ function prolosquiz() {
 
     }
 
+    // All required variables are declared below
 
     let index = 0;
     let correct = 0,
         incorrect = 0,
         total = proflos.length;
-    let timevalue = 60;    
+    let timevalue = 60;
     let counter = 0;
     let questionBox = document.getElementById("questionBox");
     let allInputs = document.querySelectorAll("input[type='radio']")
     starttimer(60);
+
+    // To get Questions and Options from Above Declared Array
+    // And Load it to the Quiz Page
+
     const loadQuestion = () => {
         if (total === index) {
             return quizEnd()
@@ -422,6 +433,9 @@ function prolosquiz() {
         allInputs[2].nextElementSibling.innerText = data.c
         allInputs[3].nextElementSibling.innerText = data.d
     }
+
+    // As as when Next Question Button is Clicked
+    // Next Question is Displayed
 
     document.querySelector("#submit").addEventListener(
         "click",
@@ -442,6 +456,8 @@ function prolosquiz() {
         }
     )
 
+    // Get correct answer
+
     const getAnswer = () => {
         let ans;
 
@@ -455,6 +471,8 @@ function prolosquiz() {
         return ans;
     }
 
+    // Reset Function
+
     const reset = () => {
         allInputs.forEach(
             (inputEl) => {
@@ -462,6 +480,8 @@ function prolosquiz() {
             }
         )
     }
+
+    // Function to end Quiz and Display Result
 
     const quizEnd = () => {
         // console.log(document.getElementsByClassName("container"));
@@ -484,29 +504,35 @@ function prolosquiz() {
 
 }
 
+// Profit and Loss Quiz End------------------
+
+// Pipes and Cistern Quiz Start--------------
+
 function pipequiz() {
 
-    function starttimer(time){
+    // Function of Timer for Quiz
+
+    function starttimer(time) {
 
         counter = setInterval(timer, 1000)
-        function timer(){
+        function timer() {
             const timerElement = document.getElementById('timer');
             timerElement.innerHTML = 'Time Left : ' + time + ' seconds';
             time--;
-            if(time<0){
+            if (time < 0) {
                 clearInterval(counter);
                 index++;
                 loadQuestion()
                 starttimer(timevalue);
 
-                                 
+
             }
         }
     }
- 
-   
 
-    
+
+    // All required variables are declared below
+
     let index = 0;
     let correct = 0,
         incorrect = 0,
@@ -517,12 +543,17 @@ function pipequiz() {
     let allInputs = document.querySelectorAll("input[type='radio']")
     starttimer(60);
 
+    // Function to Count Score
+
     function userscore() {
         var score = document.getElementById('score');
         score = correct;
         score = document.getElementById('score').innerHTML = 'Score : ' + score;
 
     }
+
+    // To get Questions and Options from Above Declared Array
+    // And Load it to the Quiz Page
 
     const loadQuestion = () => {
         if (total === index) {
@@ -537,10 +568,13 @@ function pipequiz() {
         allInputs[3].nextElementSibling.innerText = data.d
     }
 
+    // As as when Next Question Button is Clicked
+    // Next Question is Displayed
+
     document.querySelector("#submit").addEventListener(
         "click",
         function () {
-            
+
             const data = pipe[index]
             const ans = getAnswer()
             if (ans === data.correct) {
@@ -556,20 +590,23 @@ function pipequiz() {
         }
     )
 
+    // Get correct answer
+
     const getAnswer = () => {
-        
         let ans;
         allInputs.forEach(
             (inputEl) => {
                 if (inputEl.checked) {
                     ans = inputEl.value;
-                   
+
                 }
             }
         )
-        
+
         return ans;
     }
+
+    // Reset Function
 
     const reset = () => {
         allInputs.forEach(
@@ -579,8 +616,10 @@ function pipequiz() {
         )
     }
 
+    // Function to end Quiz and Display Result
+
     const quizEnd = () => {
-        
+
         // console.log(document.getElementsByClassName("container"));
         let finish = document.getElementById('timer')
         finish.style.display = "none";
@@ -594,31 +633,38 @@ function pipequiz() {
             
             </div>
         `
-        
+
     }
     loadQuestion(index);
 }
 
+// Pipes and Cistern Quiz End--------------
+
+// Probability Quiz Start------------
 
 function probquiz() {
 
-    function starttimer(time){
+    // Function of Timer for Quiz
+
+    function starttimer(time) {
 
         counter = setInterval(timer, 1000)
-        function timer(){
+        function timer() {
             const timerElement = document.getElementById('timer');
             timerElement.innerHTML = 'Time Left : ' + time + ' seconds';
             time--;
-            if(time<0){
+            if (time < 0) {
                 clearInterval(counter);
                 index++;
                 loadQuestion()
                 starttimer(timevalue);
 
-                                 
+
             }
         }
     }
+
+    // Function to Count Score
 
     function userscore() {
         var score = document.getElementById('score');
@@ -628,17 +674,21 @@ function probquiz() {
     }
 
 
-
+    // All required variables are declared below
 
     let index = 0;
     let correct = 0,
         incorrect = 0,
         total = probab.length;
-    let timevalue = 60;    
-    let counter = 0   
+    let timevalue = 60;
+    let counter = 0
     let questionBox = document.getElementById("questionBox");
     let allInputs = document.querySelectorAll("input[type='radio']")
-    starttimer(60);   
+    starttimer(60);
+
+    // To get Questions and Options from Above Declared Array
+    // And Load it to the Quiz Page
+
     const loadQuestion = () => {
         if (total === index) {
             return quizEnd()
@@ -651,6 +701,9 @@ function probquiz() {
         allInputs[2].nextElementSibling.innerText = data.c
         allInputs[3].nextElementSibling.innerText = data.d
     }
+
+    // As as when Next Question Button is Clicked
+    // Next Question is Displayed
 
     document.querySelector("#submit").addEventListener(
         "click",
@@ -671,6 +724,8 @@ function probquiz() {
         }
     )
 
+    // Get correct answer
+
     const getAnswer = () => {
         let ans;
         allInputs.forEach(
@@ -683,6 +738,8 @@ function probquiz() {
         return ans;
     }
 
+    // Reset Function
+
     const reset = () => {
         allInputs.forEach(
             (inputEl) => {
@@ -690,6 +747,8 @@ function probquiz() {
             }
         )
     }
+
+    // Function to end Quiz and Display Result
 
     const quizEnd = () => {
         // console.log(document.getElementsByClassName("container"));
@@ -710,28 +769,33 @@ function probquiz() {
 
 }
 
+// Probability Quiz End-----------
 
 
-
+// Age Quiz Start--------------
 
 function agequiz() {
-    
-    function starttimer(time){
+
+    // Function of Timer for Quiz
+
+    function starttimer(time) {
 
         counter = setInterval(timer, 1000)
-        function timer(){
+        function timer() {
             const timerElement = document.getElementById('timer');
             timerElement.innerHTML = 'Time Left : ' + time + ' seconds';
             time--;
-            if(time<0){
+            if (time < 0) {
                 clearInterval(counter);
                 index++;
                 loadQuestion()
                 starttimer(timevalue);
-                                 
+
             }
         }
     }
+
+    // Function to count Score
 
     function userscore() {
         var score = document.getElementById('score');
@@ -739,19 +803,25 @@ function agequiz() {
         document.getElementById('score').innerHTML = 'Score : ' + score;
 
     }
+    
+    // All required variables are declared below
 
     let index = 0;
     let correct = 0,
         incorrect = 0,
         total = age.length;
-    let timevalue = 60;    
-    let counter = 0    
+    let timevalue = 60;
+    let counter = 0
     let questionBox = document.getElementById("questionBox");
     let allInputs = document.querySelectorAll("input[type='radio']")
     starttimer(60);
+
+    // To get Questions and Options from Above Declared Array
+    // And Load it to the Quiz Page
+
     const loadQuestion = () => {
         if (total === index) {
-            return quizEnd()
+            return quizEnd();
         }
         reset()
         const data = age[index]
@@ -761,6 +831,9 @@ function agequiz() {
         allInputs[2].nextElementSibling.innerText = data.c
         allInputs[3].nextElementSibling.innerText = data.d
     }
+
+    // As as when Next Question Button is Clicked
+    // Next Question is Displayed
 
     document.querySelector("#submit").addEventListener(
         "click",
@@ -781,6 +854,8 @@ function agequiz() {
             loadQuestion()
         }
     )
+     
+    // Get correct answer
 
     const getAnswer = () => {
         let ans;
@@ -795,6 +870,8 @@ function agequiz() {
         return ans;
     }
 
+    // Reset Function
+
     const reset = () => {
         allInputs.forEach(
             (inputEl) => {
@@ -803,78 +880,80 @@ function agequiz() {
         )
     }
 
+    // Function to end Quiz and Display Result
     const quizEnd = () => {
         // console.log(document.getElementsByClassName("container"))
         let finish = document.getElementById('timer')
         finish.style.display = "none";
         score.style.display = "none";
-
         document.getElementsByClassName("container")[0].innerHTML = `
         <div class="col">
             <h3 class="w-100">Your Result is as Follows.</h3>
             <h3 class="w-100">Total Questions : ${total} </h3>
             <h3 class="w-100">Correct : ${correct} </h3>
             <h3 class="w-100">Incorrect : ${total - correct} </h3>
-             
+            
         </div>
     `
-     
     }
     loadQuestion(index);
 }
 
+// Age Quiz End--------------------
 
+
+// Initial interface - Quiz and Result Pages are Hidden
 
 const select_category = document.getElementById('select_category');
 select_category.style.display = "none";
 
-const category= document.getElementById('category')
+const category = document.getElementById('category')
 category.style.display = "none";
 
 const bottom = document.getElementById('bottom')
 bottom.style.display = "none";
 
 
-
+// Event Given to Enter Button to Show Quiz Category 
 const enter = document.getElementById('enter');
-
 enter.addEventListener('click',
     function () {
-        let user= document.getElementById('userdata').value
-        if(user=='')
-        {
+        let user = document.getElementById('userdata').value
+        if (user == '') {
             alert('Please Enter Name...');
-            
+
         }
-        else{
-            
+        else {
+
             let frontpage = document.getElementById('front')
             frontpage.style.display = "none";
             select_category.style.display = "block";
-            
-            
-             
-         }
-}
+
+
+
+        }
+    }
 )
+
+// Select Category for Quiz - Event is linked to Click on Button
 
 const btn1 = document.getElementById('btn1')
 btn1.addEventListener('click',
     function () {
-           
-           category.style.display = "block";
-           bottom.style.display = "block";
-           select_category.style.display = "none";
+
+        category.style.display = "block";
+        bottom.style.display = "block";
+        select_category.style.display = "none";
 
     }
 )
 const btn2 = document.getElementById('btn2')
 btn2.addEventListener('click',
     function () {
-           
-           category.style.display = "block";
-           bottom.style.display = "block";
-           select_category.style.display = "none";
+
+        category.style.display = "block";
+        bottom.style.display = "block";
+        select_category.style.display = "none";
 
     }
 )
@@ -882,31 +961,33 @@ btn2.addEventListener('click',
 const btn3 = document.getElementById('btn3')
 btn3.addEventListener('click',
     function () {
-           
-           category.style.display = "block";
-           bottom.style.display = "block";
-           select_category.style.display = "none";
+
+        category.style.display = "block";
+        bottom.style.display = "block";
+        select_category.style.display = "none";
 
     }
 
-    )
+)
 const btn4 = document.getElementById('btn4')
 btn4.addEventListener('click',
     function () {
-           
-           category.style.display = "block";
-           bottom.style.display = "block";
-           select_category.style.display = "none";
+
+        category.style.display = "block";
+        bottom.style.display = "block";
+        select_category.style.display = "none";
 
     }
 )
+// Added Exit Quiz Function
+function shut_down() {
 
-/*const end = document.getElementById('end')
-end.addEventListener('click',
-     function () {
-        category.style.display = "none";
-        let frontpage = document.getElementById('front')
-        frontpage.style.display = "block";
-        bottom.style.display = "none";
-     }  
-) */
+    let finish = document.getElementById('timer')
+    finish.style.display = "none";
+    score.style.display = "none";
+    document.getElementsByClassName("container")[0].innerHTML = `
+        <div class="col" style = "color : red">
+            <h3 class="w-100">Thank you for taking this Quiz.</h3>
+        </div>`
+}
+
