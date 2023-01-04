@@ -1,21 +1,33 @@
 * {
 
-    padding: 10px;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
     font-family: sans-serif;
 }
 
 body {
-    background-color: rgb(44, 134, 167);
-
-}
-
-#front {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    background-color: rgb(188, 143, 240);
+}
+
+
+
+#front {
+    display: block;
     border: 2px solid black;
     border-radius: 1rem;
-    background-color: yellow;
-    margin: auto 30%;
+    margin: 4rem;
+    padding: 1rem;
+    width: 45%;
+    background-color: white;
+    height: 100%;
+    align-items: center;
+    box-shadow: .2rem .5rem .2rem #8e43e4;
+
+
 }
 
 
@@ -36,25 +48,86 @@ body {
 }
 
 
+
+/* Select category css  */
+
+
+
+
+#select_category {
+
+    display: none;
+    background-color: whitesmoke;
+
+    border: 2px solid black;
+    border-radius: 1rem;
+    margin: 11rem auto;
+    width: auto;
+    text-align: center;
+    box-shadow: .2rem .5rem .2rem #8e43e4;
+}
+
+
+#select_category h2 {
+    padding-top: 2rem;
+}
+
+.design {
+    background-color: white;
+    border-radius: 1rem;
+    margin: 2rem;
+    padding-bottom: 1rem;
+    box-shadow: .2rem .5rem .2rem #605f60;
+}
+
+
+.btn_category button {
+    margin: .3rem .7rem;
+    /* display: block;
+    flex-direction: row; */
+
+}
+
+/* New Styles */
+#header {
+    background-color: rgb(245, 226, 201);
+    border-radius: 2rem;
+    padding: .6rem;
+}
+
+
 #category {
-    background-color: antiquewhite;
-
+    border-radius: 1rem;
+    background-color: whitesmoke;
+    margin: 2rem;
+    padding: 1rem;
+    width: auto;
 }
 
-.category {
-    background-color: rgb(208, 178, 178);
 
+
+.container {
+    background-color: white;
+    border-radius: 1rem;
+    padding: 2rem;
+    box-shadow: .2rem .5rem .2rem #605f60;
 }
 
-.category button:hover {
-    background-color: rgb(196, 193, 16);
+
+
+div.col.box {
     font-size: larger;
+    font-weight: 200;
+    margin-top: .5rem;
+}
+
+.container button {
+    margin-top: 2rem;
+    width: 100%;
+    border-radius: 1rem;
 }
 
 
-.col box label {
-    font-size: larger;
-}
 
 
 
@@ -65,14 +138,57 @@ body {
     margin-top: 10px;
 }
 
-#category {
+#questionbox {
     border: solid 2px rgb(56, 55, 55);
-
-    border-radius: 5px;
+    background-color: whitesmoke;
+    justify-content: center;
+    border: 2px solid black;
+    border-radius: 1rem;
+    margin: 11rem auto;
+    width: auto;
+    text-align: center;
+    box-shadow: .2rem .5rem .2rem #8e43e4;
 }
+
+
+
 
 .box2 {
     border: 2px solid black;
     border-radius: 1rem;
     background-color: rgb(152, 224, 234);
+
+}
+
+
+
+#bottom button {
+    /* justify-content: space-evenly; */
+    /* text-decoration: none; */
+    font-size: larger;
+    background-color: white;
+    border-radius: 0.4rem;
+}
+
+/* Added New Styles*/
+#restart a {
+
+text-decoration: none;
+color: blue;
+
+}
+
+#bottom button:hover {
+    
+    background-color: rgb(70, 70, 235);
+
+}
+#bottom button {
+    
+    background-color: whitesmoke;
+
+}
+
+#end{
+    color: blue;
 }
